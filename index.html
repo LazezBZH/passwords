@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="title" content="Générateur de mots de passe" />
+    <meta
+      name="description"
+      content="Générer aléatoirement un mot de passe d'après les critères sélectionnés."
+    />
+    <meta name="author" content="LazezBZH" />
+
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <h1>Générateur de mot de passe</h1>
+    <p class="description">donnez-moi vos critères et je génèrerai un mot de passe aléatoire</p>
+    <form name="myform">
+      <label for="passwordLength"> Taille du mot de passe:</label>
+      </br>
+      <input
+        type="text"
+        name="passwordLength"
+        id="passwordLength"
+        placeholder="nombre de caractères"
+      />
+
+     <fieldset> 
+        <legend>Premier caractére</legend>
+        <div>
+          <input type="checkbox" id="firstMayBeUpper" name="firstMayBeUpper" >
+          <label for="firstMayBeUpper">Majuscules</label>
+        </div>
+        <div>
+          <input type="checkbox" id="firstMayBeLower" name="firstMayBeLower" >
+          <label for="firstMayBeLower">Minuscules</label>
+        </div>
+        <div>
+          <input type="checkbox" id="firstMayBeNumber" name="firstMayBeNumber" >
+          <label for="firstMayBeNumber">Chiffres</label>
+        </div>            
+        <div>
+          <input type="checkbox" id="firstMayBeOther" name="firstMayBeOther" >
+          <label for="firstMayBeOther">Caractères spéciaux</label>
+        </div>
+      </fieldset>
+
+     <fieldset> 
+        <legend>Caractéres suivants</legend>
+        <div>
+          <input type="checkbox" id="lastMayBeUpper" name="lastMayBeUpper" >
+          <label for="lastMayBeUpper">Majuscules</label>
+        </div>
+        <div>
+          <input type="checkbox" id="lastMayBeLower" name="lastMayBeLower" >
+          <label for="lastMayBeLower">Minuscules</label>
+        </div>
+        <div>
+          <input type="checkbox" id="lastMayBeNumber" name="lastMayBeNumber" >
+          <label for="lastMayBeNumber">Chiffres</label>
+        </div>            
+        <div>
+          <input type="checkbox" id="lastMayBerOther" name="lastMayBerOther" >
+          <label for="lastMayBerOther">Caractères spéciaux</label>
+        </div>
+      </fieldset>
+      <button>Générer un mot de passe selon mes critères</button>
+      <div>
+        <label for="password">Votre mot de passe</label>
+        <input type="text" name="password" id="password" />
+      </div>
+    </form>
+    <h2>Conseil</h2>
+    <p>Pour obtenir un mot de passe sécurisé toujours cocher au moins une fois chaque catégorie.</p>
+    <p>L'idéal selon la CNIL étant un mot de passe d'au moins 12 caractères de 4 types différents.</p>
+    <p>Source: <a href="https://www.cnil.fr/fr/les-conseils-de-la-cnil-pour-un-bon-mot-de-passe">Les conseils de la CNIL pour un bon mot de passe</a></p>
+    <div>
+      <label for="security">Niveau de sécurité du mot de passe généré:</label>
+      <progress id="security" max="100" value="80"></progress>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
