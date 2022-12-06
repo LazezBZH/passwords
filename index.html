@@ -11,65 +11,54 @@
       content="Générer aléatoirement un mot de passe d'après les critères sélectionnés."
     />
     <meta name="author" content="LazezBZH" />
-
+<title>Générateur de mot de passe</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
+ 
+<script src="https://unpkg.com/feather-icons"></script>
+
+   
   </head>
   <body>
-    <h1>Générateur de mot de passe</h1>
+    <h1>Générateur de mot de passe <i data-feather="shield" stroke="#15FAEC" fill="#FE0000" stroke-width="3" width="120" height="90"></i></h1>
     <p class="description">donnez-moi vos critères et je génèrerai un mot de passe aléatoire</p>
     <form name="myform">
-      <label for="passwordLength"> Taille du mot de passe:</label>
+      <label for="passwordLength"> Taille du mot de passe (minimum 4):</label>
       </br>
       <input
-        type="text"
+        type="number"
+        min="4"
         name="passwordLength"
         id="passwordLength"
         placeholder="nombre de caractères"
       />
 
      <fieldset> 
-        <legend>Premier caractére</legend>
+        <legend>Caractères souhaités: </i></legend>
         <div>
-          <input type="checkbox" id="firstMayBeUpper" name="firstMayBeUpper" >
-          <label for="firstMayBeUpper">Majuscules</label>
+          <input type="checkbox" id="mustHaveUpper" name="mustHaveUpper" >
+          <label for="mustHaveUpper">Majuscules</label>
         </div>
         <div>
-          <input type="checkbox" id="firstMayBeLower" name="firstMayBeLower" >
-          <label for="firstMayBeLower">Minuscules</label>
+          <input type="checkbox" id="mustHaveLower" name="mustHaveLower" >
+          <label for="mustHaveLower">Minuscules</label>
         </div>
         <div>
-          <input type="checkbox" id="firstMayBeNumber" name="firstMayBeNumber" >
-          <label for="firstMayBeNumber">Chiffres</label>
+          <input type="checkbox" id="mustHaveNumber" name="mustHaveNumber" >
+          <label for="mustHaveNumber">Chiffres</label>
         </div>            
         <div>
-          <input type="checkbox" id="firstMayBeOther" name="firstMayBeOther" >
-          <label for="firstMayBeOther">Caractères spéciaux</label>
+          <input type="checkbox" id="mustHaveOther" name="mustHaveOther" >
+          <label for="mustHaveOther">Caractères spéciaux</label>
         </div>
       </fieldset>
 
-     <fieldset> 
-        <legend>Caractéres suivants</legend>
-        <div>
-          <input type="checkbox" id="lastMayBeUpper" name="lastMayBeUpper" >
-          <label for="lastMayBeUpper">Majuscules</label>
-        </div>
-        <div>
-          <input type="checkbox" id="lastMayBeLower" name="lastMayBeLower" >
-          <label for="lastMayBeLower">Minuscules</label>
-        </div>
-        <div>
-          <input type="checkbox" id="lastMayBeNumber" name="lastMayBeNumber" >
-          <label for="lastMayBeNumber">Chiffres</label>
-        </div>            
-        <div>
-          <input type="checkbox" id="lastMayBerOther" name="lastMayBerOther" >
-          <label for="lastMayBerOther">Caractères spéciaux</label>
-        </div>
-      </fieldset>
-      <button>Générer un mot de passe selon mes critères</button>
+
+      <button type="button" id="generatePassword">Générer un mot de passe selon mes critères</button>
+      <p id="error1"></p> <p id="error2"></p>
       <div>
         <label for="password">Votre mot de passe</label>
-        <input type="text" name="password" id="password" />
+        <div id="passwordCopy"><input type="text" name="password" id="password" /> <i data-feather="copy" ></i></div>
+      <p id="copyOk"></p>
       </div>
     </form>
     <h2>Conseil</h2>
@@ -77,9 +66,12 @@
     <p>L'idéal selon la CNIL étant un mot de passe d'au moins 12 caractères de 4 types différents.</p>
     <p>Source: <a href="https://www.cnil.fr/fr/les-conseils-de-la-cnil-pour-un-bon-mot-de-passe">Les conseils de la CNIL pour un bon mot de passe</a></p>
     <div>
-      <label for="security">Niveau de sécurité du mot de passe généré:</label>
+      <label for="security">Estimation du niveau de sécurité du mot de passe généré:</label>
       <progress id="security" max="100" value="80"></progress>
+      <p>Vous pouvez également le tester plus précisément là: <a href="http://password-checker.online-domain-tools.com/" target="_blank"> <i data-feather="external-link" stroke="#15FAEC" stroke-width="3" width="48" >Lien</i> </a></p>
     </div>
+    
     <script src="script.js"></script>
+    
   </body>
 </html>
