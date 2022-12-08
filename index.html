@@ -30,23 +30,24 @@
         name="passwordLength"
         id="passwordLength"
         placeholder="nombre de caractères"
+       
       />
 
-     <fieldset> 
+     <fieldset id="clearError"> 
         <legend>Caractères souhaités: </i></legend>
-        <div>
+        <div >
           <input type="checkbox" id="mustHaveUpper" name="mustHaveUpper" >
           <label for="mustHaveUpper">Majuscules</label>
         </div>
-        <div>
+        <div class="clearError">
           <input type="checkbox" id="mustHaveLower" name="mustHaveLower" >
           <label for="mustHaveLower">Minuscules</label>
         </div>
-        <div>
+        <div class="clearError">
           <input type="checkbox" id="mustHaveNumber" name="mustHaveNumber" >
           <label for="mustHaveNumber">Chiffres</label>
         </div>            
-        <div>
+        <div class="clearError">
           <input type="checkbox" id="mustHaveOther" name="mustHaveOther" >
           <label for="mustHaveOther">Caractères spéciaux</label>
         </div>
@@ -55,10 +56,12 @@
 
       <button type="button" id="generatePassword">Générer un mot de passe selon mes critères</button>
       <p id="error1"></p> <p id="error2"></p>
+      <div class="error"><P id="error"></P></div>
       <div>
         <label for="password">Votre mot de passe</label>
-        <div id="passwordCopy"><input type="text" name="password" id="password" /> <i data-feather="copy" ></i></div>
-      <p id="copyOk"></p>
+        
+        <div id="copyPassword"><input type="text" name="password" id="password" /> <i data-feather="copy" ></i></div>
+      <p id="copyOk"></p><p id="copyNotOk"></p>
       </div>
     </form>
     <h2>Conseil</h2>
