@@ -36,19 +36,19 @@
      <fieldset id="clearError"> 
         <legend>Caractères souhaités: </i></legend>
         <div >
-          <input type="checkbox" id="mustHaveUpper" name="mustHaveUpper" >
+          <input type="checkbox" id="mustHaveUpper" name="mustHaveUpper" class="checkbox" >
           <label for="mustHaveUpper">Majuscules</label>
         </div>
         <div class="clearError">
-          <input type="checkbox" id="mustHaveLower" name="mustHaveLower" >
+          <input type="checkbox" id="mustHaveLower" name="mustHaveLower" class="checkbox" >
           <label for="mustHaveLower">Minuscules</label>
         </div>
         <div class="clearError">
-          <input type="checkbox" id="mustHaveNumber" name="mustHaveNumber" >
+          <input type="checkbox" id="mustHaveNumber" name="mustHaveNumber" class="checkbox">
           <label for="mustHaveNumber">Chiffres</label>
         </div>            
         <div class="clearError">
-          <input type="checkbox" id="mustHaveOther" name="mustHaveOther" >
+          <input type="checkbox" id="mustHaveOther" name="mustHaveOther" class="checkbox">
           <label for="mustHaveOther">Caractères spéciaux</label>
         </div>
       </fieldset>
@@ -63,18 +63,20 @@
         <div id="copyPassword"><input type="text" name="password" id="password" /> <i data-feather="copy" ></i></div>
       <p id="copyOk"></p><p id="copyNotOk"></p>
       </div>
+        <div>
+      <label for="security">Estimation du niveau de sécurité du mot de passe généré:</label>
+      <progress id="security" max="100" value="0" ></progress>
+      <p>Vous pouvez également le tester plus précisément là: <a href="http://password-checker.online-domain-tools.com/" target="_blank"> <i data-feather="external-link" stroke="#15FAEC" stroke-width="3" width="48" >Lien</i> </a></p>
+    </div>
     </form>
     <h2>Conseil</h2>
     <p>Pour obtenir un mot de passe sécurisé toujours cocher au moins une fois chaque catégorie.</p>
     <p>L'idéal selon la CNIL étant un mot de passe d'au moins 12 caractères de 4 types différents.</p>
     <p>Source: <a href="https://www.cnil.fr/fr/les-conseils-de-la-cnil-pour-un-bon-mot-de-passe">Les conseils de la CNIL pour un bon mot de passe</a></p>
-    <div>
-      <label for="security">Estimation du niveau de sécurité du mot de passe généré:</label>
-      <progress id="security" max="100" value="80"></progress>
-      <p>Vous pouvez également le tester plus précisément là: <a href="http://password-checker.online-domain-tools.com/" target="_blank"> <i data-feather="external-link" stroke="#15FAEC" stroke-width="3" width="48" >Lien</i> </a></p>
-    </div>
+  
     
     <script src="script.js"></script>
+    <script src="security.js"></script>
     
   </body>
 </html>

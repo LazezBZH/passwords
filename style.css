@@ -1,0 +1,32 @@
+progress {
+  -webkit-appearance: none;
+}
+
+progress::-webkit-progress-value {
+  -webkit-appearance: none;
+  background: rgb(1, 108, 1);
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.34) inset;
+}
+
+progress::-webkit-progress-bar {
+  -webkit-appearance: none;
+  background: rgb(226, 226, 226);
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.34) inset;
+}
+.verylow::-webkit-progress-value {
+  background: red;
+}
+.low::-webkit-progress-value {
+  background: orange;
+}
+.middle::-webkit-progress-value {
+  background: yellow;
+}
+.good::-webkit-progress-value {
+  background: rgb(105, 199, 105);
+}
+.verygood::-webkit-progress-bar {
+  background: rgb(1, 108, 1);
+}
