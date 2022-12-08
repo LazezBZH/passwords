@@ -30,3 +30,10 @@ progress::-webkit-progress-bar {
 .verygood::-webkit-progress-bar {
   background: rgb(1, 108, 1);
 }
+.progressBar {
+  width: 40%;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

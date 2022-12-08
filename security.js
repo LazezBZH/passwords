@@ -73,35 +73,66 @@ function securityRate(e) {
 }
 
 function colorProgress(e) {
-  if (security <= 20) {
+  if (!lengthRate || !charCategoryRate) {
+    document.getElementById("verylow").style.display = "none";
+    document.getElementById("low").style.display = "none";
+    document.getElementById("middle").style.display = "none";
+    document.getElementById("good").style.display = "none";
+    document.getElementById("verygood").style.display = "none";
+  } else if (security > 0 && security <= 20) {
     securityLevel.classList.add("verylow");
     securityLevel.classList.remove("low");
     securityLevel.classList.remove("middle");
     securityLevel.classList.remove("good");
     securityLevel.classList.remove("verygood");
+    document.getElementById("verylow").style.display = "block";
+    document.getElementById("low").style.display = "none";
+    document.getElementById("middle").style.display = "none";
+    document.getElementById("good").style.display = "none";
+    document.getElementById("verygood").style.display = "none";
   } else if (security > 20 && security <= 50) {
     securityLevel.classList.remove("verylow");
     securityLevel.classList.add("low");
     securityLevel.classList.remove("middle");
     securityLevel.classList.remove("good");
     securityLevel.classList.remove("verygood");
+    document.getElementById("verylow").style.display = "none";
+    document.getElementById("low").style.display = "block";
+    document.getElementById("middle").style.display = "none";
+    document.getElementById("good").style.display = "none";
+    document.getElementById("verygood").style.display = "none";
   } else if (security > 50 && security < 80) {
     securityLevel.classList.remove("verylow");
     securityLevel.classList.remove("low");
     securityLevel.classList.add("middle");
     securityLevel.classList.remove("good");
     securityLevel.classList.remove("verygood");
+    document.getElementById("verylow").style.display = "none";
+    document.getElementById("low").style.display = "none";
+    document.getElementById("middle").style.display = "block";
+    document.getElementById("good").style.display = "none";
+    document.getElementById("verygood").style.display = "none";
   } else if (security >= 80 && security <= 90) {
     securityLevel.classList.remove("verylow");
     securityLevel.classList.remove("low");
     securityLevel.classList.remove("middle");
     securityLevel.classList.add("good");
     securityLevel.classList.remove("verygood");
+    document.getElementById("verylow").style.display = "none";
+    document.getElementById("low").style.display = "none";
+    document.getElementById("middle").style.display = "none";
+    document.getElementById("good").style.display = "block";
+    document.getElementById("verygood").style.display = "none";
   } else {
     securityLevel.classList.remove("verylow");
     securityLevel.classList.remove("low");
     securityLevel.classList.remove("middle");
     securityLevel.classList.remove("good");
     securityLevel.classList.add("verygood");
+    document.getElementById("verylow").style.display = "none";
+    document.getElementById("low").style.display = "none";
+    document.getElementById("middle").style.display = "none";
+    document.getElementById("good").style.display = "none";
+    document.getElementById("verygood").style.display = "block";
   }
 }
