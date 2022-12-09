@@ -6,18 +6,22 @@ const copyPassword = document.getElementById("copyPassword");
 const passwordToCopy = passwordOutput.value;
 const error = document.getElementById("error");
 const copyOk = document.getElementById("copyOk");
+const refresh = document.getElementById("refresh");
 
 const mustHaveUpper = document.getElementById("mustHaveUpper");
 const mustHaveLower = document.getElementById("mustHaveLower");
 const mustHaveNumber = document.getElementById("mustHaveNumber");
 const mustHaveOther = document.getElementById("mustHaveOther");
 const passwordLength = document.getElementById("passwordLength");
-const clearErrorOnChange = document.getElementById("clearError");
+const clearErrorOnChange = document.getElementById("fieldset");
 
 generatePassword.addEventListener("click", generate);
+generatePassword.addEventListener("mouseover", changeTextBtn);
+generatePassword.addEventListener("mouseout", resetTextBtn);
 copyPassword.addEventListener("click", copy);
 passwordLength.addEventListener("click", clearError);
 clearErrorOnChange.addEventListener("click", clearError);
+refresh.addEventListener("click", refresh);
 
 let lowerCaseChar = [
   "a",
@@ -128,15 +132,15 @@ function generate(e) {
   let password = "";
   if (!chosenLength && allChar.length < 1) {
     error.textContent =
-      "Merci de sélectionner au minimum un type de caractères et Minimum 4";
+      "* Merci de sélectionner au moins un type de caractères et une taile de 4 ou plus.";
   } else if (chosenLength < 4 && allChar.length < 1) {
     error.textContent =
-      "Merci de sélectionner au minimum un type de caractères et Minimum 4";
+      "* Merci de sélectionner au moins un type de caractères et une taile de 4 ou plus.";
   } else if (!chosenLength || chosenLength < 4) {
-    error.textContent = "Minimum 4";
+    error.textContent = "* Merci de sélectionner une taile de 4 ou plus.";
   } else if (allChar.length < 1) {
     error.textContent =
-      "Merci de sélectionner au minimum un type de caractères";
+      "* Merci de sélectionner au moins un type de caractères.";
   } else if (
     // case1
     mustHaveLower.checked &&
@@ -149,6 +153,7 @@ function generate(e) {
         lowerCaseChar[Math.floor(Math.random() * lowerCaseChar.length)];
     }
     error.textContent = "";
+
     return (passwordOutput.value = password);
   } else if (
     // case2
@@ -373,4 +378,17 @@ function copy(e) {
   } else {
     alert("Vous n'avez pas encore généré de mot de passe à copier!");
   }
+}
+
+function changeTextBtn(e) {
+  e.preventDefault();
+  generatePassword.textContent = "On y va!";
+}
+function resetTextBtn(e) {
+  e.preventDefault();
+  generatePassword.textContent = "Générer un mot de passe selon mes critères";
+}
+function resetfresh(e) {
+  e.preventDefault();
+  form.refresh();
 }
