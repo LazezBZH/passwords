@@ -41,12 +41,18 @@ progress::-webkit-progress-bar {
 }
 
 /* général */
+body {
+  background-color: rgba(0, 0, 0, 0.85);
+}
 .container {
   max-width: 1000px;
+  height: 576px;
   margin: auto;
   border: solid black 5px;
   border-radius: 3rem 0;
   background-color: rgb(251, 244, 231);
+  margin-top: 50vh;
+  transform: translateY(-50%);
 }
 .banner {
   display: flex;
@@ -168,7 +174,8 @@ form {
   position: relative;
 }
 .result label {
-  color: #10afa4;
+  color: #01736b;
+  font-weight: bold;
 }
 #copyPassword {
   display: flex;
@@ -176,14 +183,19 @@ form {
   top: 0.5rem;
   right: 1.5rem;
 }
-#password i {
-  margin-right: 2rem;
+#password {
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 10rem;
+}
+.copy {
+  margin-left: 0.5rem;
 }
 .clicToCopy {
   font-size: 0.7rem;
   text-align: right;
   margin-bottom: 1rem;
-  color: #118c84;
+  color: #01736b;
 }
 
 .security {
@@ -210,8 +222,11 @@ footer h2 {
   flex: 0.3;
   font-size: 2rem;
   padding-left: 2rem;
-  color: #10afa4;
+  color: #01736b;
 }
 footer div {
   flex: 1;
+}
+#link {
+  display: none;
 }
