@@ -11,6 +11,12 @@
       content="Générer aléatoirement un mot de passe d'après les critères sélectionnés."
     />
     <meta name="author" content="LazezBZH" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
     <title>Générateur de mot de passe</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
  
@@ -20,20 +26,22 @@
   <body >
     <div class="container"> 
       <header>
-        <div class="banner"><i data-feather="shield" stroke="#15FAEC" fill="#FE0000" stroke-width="3" width="100" height="80"></i><h1>Générateur de mot de passe </h1></div>
+        <div class="banner"><i data-feather="shield" stroke="#15FAEC" fill="#FE0000" stroke-width="3" width="100" height="80"></i><span id="hOne"><h1>Générateur de mot de passe </h1></span></div>
         <p class="description">Donnez-moi vos critères et je générerai un mot de passe aléatoire</p>
       </header>
       <form class="myform">
         <div class="generator">
           <div class="choice"> 
-            <label for="passwordLength" > Longueur souhaitée (mini 4):</label>
-            <input
+        
+      
+          <div class="passwordLengthChoice">     <label for="passwordLength" > Longueur souhaitée (mini 4):</label>       <input
         type="number"
         min="4"
         name="passwordLength"
         id="passwordLength"
         placeholder="taille" 
-      />
+      /></div>
+      
             <fieldset id="fieldset"> 
               <legend >Caractères souhaités: </i></legend>
               <div >
