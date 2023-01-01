@@ -15,7 +15,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="site.webmanifest">
+<link rel="manifest" href="/manifest.json">
 
     <title>Générateur de mot de passe</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
@@ -86,7 +86,7 @@
            <div class="security"> <p for="security">Estimation du niveau de sécurité du mot de passe généré:</p>
             <div class="progressBar"><progress id="security" max="100" value="0" ></progress> <div class="smiley"><i data-feather="frown" stroke="black" fill="red" stroke-width="2" width="20" height="20" id="verylow" display="none"></i><i data-feather="frown" stroke="black" fill="orange" stroke-width="2" width="20" height="20" id="low" display="none"></i><i data-feather="frown" stroke="black" fill="yellow" stroke-width="2" width="20" height="20"id="middle" display="none"></i><i data-feather="smile" stroke="black" fill="rgb(105, 199, 105)" stroke-width="2" width="20" height="20" id="good" display="none"></i><i data-feather="smile" stroke="white" fill="rgb(1, 108, 1)" stroke-width="2" width="30" height="30" id="verygood" display="none"></i></div>
           </div></div>
-          <p class="advert">Vous pouvez également le tester plus précisément là: <a href="http://password-checker.online-domain-tools.com/" target="_blank"> <i data-feather="external-link" stroke="#15FAEC" stroke-width="3" width="48" ></i><span id="link">Lien</span> </a></p>
+          <p class="advert"><a href="http://password-checker.online-domain-tools.com/" target="_blank"> Vous pouvez également le tester plus précisément là: <i data-feather="external-link" stroke="#15FAEC" stroke-width="3" width="48" ></i> </a></p>
           </div>
         </div>
 
@@ -99,7 +99,7 @@
           <p>Source: <a href="https://www.cnil.fr/fr/les-conseils-de-la-cnil-pour-un-bon-mot-de-passe">Les conseils de la CNIL pour un bon mot de passe</a></p></div>
       </footer>
     </div>
-    <script>function registerServiceWorker() {
+    <!-- <script>function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js', { scope: '/' }).then(() => {
       console.log('Service Worker enregistré correctement.');
@@ -107,7 +107,7 @@
       console.log("Erreur lors de l'enregistrement du Service Worker : ", error);
     });
   }
-}</script>
+}</script> -->
     <script src="script.js"></script>
     <script src="security.js"></script>
  
