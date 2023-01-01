@@ -12,10 +12,10 @@
     />
     <meta name="author" content="LazezBZH" />
 
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
 
     <title>Générateur de mot de passe</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
@@ -99,7 +99,15 @@
           <p>Source: <a href="https://www.cnil.fr/fr/les-conseils-de-la-cnil-pour-un-bon-mot-de-passe">Les conseils de la CNIL pour un bon mot de passe</a></p></div>
       </footer>
     </div>
-    
+    <script>function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js', { scope: '/' }).then(() => {
+      console.log('Service Worker enregistré correctement.');
+    }).catch(error => {
+      console.log("Erreur lors de l'enregistrement du Service Worker : ", error);
+    });
+  }
+}</script>
     <script src="script.js"></script>
     <script src="security.js"></script>
  
