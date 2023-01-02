@@ -29,11 +29,10 @@ Si on surfe sur Chrome, il nous propose de générer automatiquement un mot de p
 ### Mon but
 
 - Coder un générateur de mot de passe contenant au moins un caractère de chaque type sélectionné.
+  ![screen](./screen.png)
 - Créer ma première PWA (progressive web app)
-
-![screen](./screen.png)
-![screen2](./screen-pwa-install.jpg)
-![screen3](./Screenshot_pwa.jpg)
+  ![screen2](./screen-pwa-install.jpg)
+  ![screen3](./Screenshot_pwa.jpg)
 
 ## Réalisation
 
@@ -55,6 +54,8 @@ Si on surfe sur Chrome, il nous propose de générer automatiquement un mot de p
 - Possibilité de copier dans le presse papier le mot de passe généré.
 - Responsive
 - Accessibilité: Contrast Ratio: 8.59:1
+  ![screen4](./accessibility.png)
+  ![screen5](./accessibility2.png)
 - PWA l'application peut être installée l'écran d'accueil d'un mobile. Utilisation d'un Service Worker.
 
 ## Author
