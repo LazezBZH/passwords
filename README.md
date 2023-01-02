@@ -1,6 +1,6 @@
 # Projet personnel: générateur de mot de passe
 
-But principal: garder la main et continuer à s'entraîner en vanilla js.
+But principal: garder la main et continuer à s'entraîner en vanilla js, découvrir les pwa.
 
 ## Table of contents
 
@@ -28,9 +28,12 @@ Si on surfe sur Chrome, il nous propose de générer automatiquement un mot de p
 
 ### Mon but
 
-Coder un générateur de mot de passe contenant au moins un caractère de chaque type sélectionné.
+- Coder un générateur de mot de passe contenant au moins un caractère de chaque type sélectionné.
+- Créer ma première PWA (progressive web app)
 
 ![screen](./screen.png)
+![screen2](./screen-pwa-install.jpg)
+![screen3](./Screenshot_pwa.jpg)
 
 ## Réalisation
 
