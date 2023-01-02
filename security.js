@@ -25,8 +25,7 @@ function setLengthRate(e) {
   } else {
     lengthRate = 50;
   }
-  //   console.log(passwordLength.value);
-  //   console.log(lengthRate);
+
   return lengthRate;
 }
 
@@ -56,8 +55,6 @@ function setCharCategoryRate(e) {
       charCategoryRate = 0;
   }
 
-  //   console.log(categoryCheckedNumber);
-  //   console.log(charCategoryRate);
   return charCategoryRate;
 }
 
@@ -67,7 +64,6 @@ function securityRate(e) {
   } else {
     security = lengthRate + charCategoryRate;
     securityLevel.value = security;
-    // console.log("security", security);
     return security;
   }
 }

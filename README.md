@@ -52,6 +52,7 @@ Coder un générateur de mot de passe contenant au moins un caractère de chaque
 - Possibilité de copier dans le presse papier le mot de passe généré.
 - Responsive
 - Accessibilité: Contrast Ratio: 8.59:1
+- PWA l'application peut être installée l'écran d'accueil d'un mobile. Utilisation d'un Service Worker.
 
 ## Author
 
