@@ -22,7 +22,7 @@ Si on surfe sur Chrome, il nous propose de générer automatiquement un mot de p
 
 ### Déjà développés
 
-- On trouve de nombreux projets semblable, je ne suis pas la seule à avoir choisi cette thématique pour m'entraîner!
+- On trouve de nombreux projets semblables, je ne suis pas la seule à avoir choisi cette thématique pour m'entraîner!
 
 - J'ai cependant remarqué certains problèmes dans les applis que j'ai consultées, par exemple pour lorsque l'on demande de générer un mot de passe de 4 caractères en sélectionnant les 4 types de caractères les mini applis que j'ai trouvées considèrent que sélectionner un type de caractère signifie mot "peut" contenir ce type et non pas "doit", j'ai donc codé mon appli de manière à ce que si un type de caractère est sélectionné le mot généré contiendra au moins un caractère de ce type.
 
