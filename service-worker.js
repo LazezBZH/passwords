@@ -2,7 +2,7 @@
 let CACHE_NAME = "my-cache";
 let urlsToCache = [
   "./",
-  "/style.css",
+  "./style.css",
   "/index.html",
   "/script.js",
   "/security.js",
@@ -44,17 +44,61 @@ self.addEventListener("fetch", function (event) {
   );
 });
 
-// self.addEventListener("activate", function (event) {
-//   var cacheWhitelist = ["pigment"];
+self.addEventListener("activate", function (event) {
+  var cacheWhitelist = ["pigment"];
+  event.waitUntil(
+    caches.keys().then(function (cacheNames) {
+      return Promise.all(
+        cacheNames.map(function (cacheName) {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
+
+// const CACHE_NAME = `passwordgenerator-cache`;
+
+// // Use the install event to pre-cache all initial resources.
+// self.addEventListener("install", (event) => {
 //   event.waitUntil(
-//     caches.keys().then(function (cacheNames) {
-//       return Promise.all(
-//         cacheNames.map(function (cacheName) {
-//           if (cacheWhitelist.indexOf(cacheName) === -1) {
-//             return caches.delete(cacheName);
-//           }
-//         })
-//       );
-//     })
+//     (async () => {
+//       const cache = await caches.open(CACHE_NAME);
+//       cache.addAll([
+//         "./",
+//         "/style.css",
+//         "/index.html",
+//         "/script.js",
+//         "/security.js",
+//         "https://unpkg.com/feather-icons",
+//       ]);
+//     })()
+//   );
+// });
+
+// self.addEventListener("fetch", (event) => {
+//   event.respondWith(
+//     (async () => {
+//       const cache = await caches.open(CACHE_NAME);
+
+//       // Get the resource from the cache.
+//       const cachedResponse = await cache.match(event.request);
+//       if (cachedResponse) {
+//         return cachedResponse;
+//       } else {
+//         try {
+//           // If the resource was not in the cache, try the network.
+//           const fetchResponse = await fetch(event.request);
+
+//           // Save the resource in the cache and return it.
+//           cache.put(event.request, fetchResponse.clone());
+//           return fetchResponse;
+//         } catch (e) {
+//           // The network failed
+//         }
+//       }
+//     })()
 //   );
 // });

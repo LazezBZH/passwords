@@ -427,6 +427,9 @@ footer div {
   }
 }
 @media (max-width: 415px) {
+  .banner svg {
+    display: none;
+  }
   .passwordLengthChoice {
     /* display: block; */
     flex-direction: column;
