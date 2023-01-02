@@ -112,7 +112,13 @@
     });
   }
 }</script> -->
- 
+ <!-- <script>
+		if ("serviceWorker" in navigator) {
+			window.addEventListener("load", () => {
+				navigator.serviceWorker && navigator.serviceWorker.register("sw.js");
+			});
+		}
+	</script> -->
     <script src="./script.js"></script>
     <script src="./security.js"></script>
     <script src="./register-sw.js"></script>
