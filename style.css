@@ -1,42 +1,53 @@
 /* progress bar */
 progress {
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
-progress::-webkit-progress-value {
+progress::-webkit-progress-value,
+progress::-moz-progress-value {
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   background: rgb(1, 108, 1);
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.34) inset;
 }
 
-progress::-webkit-progress-bar {
+progress::-webkit-progress-bar,
+progress::-moz-progress-bar {
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   background: rgb(226, 226, 226);
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.34) inset;
 }
-.verylow::-webkit-progress-value {
+.verylow::-webkit-progress-value,
+.verylow::-moz-progress-bar {
   background: red;
 }
-.low::-webkit-progress-value {
+.low::-webkit-progress-value,
+.low::-moz-progress-value {
   background: orange;
 }
-.middle::-webkit-progress-value {
+.middle::-webkit-progress-value,
+.middle::-moz-progress-bar {
   background: yellow;
 }
-.good::-webkit-progress-value {
+.good::-webkit-progress-value,
+.good::-moz-progress-bar {
   background: rgb(105, 199, 105);
 }
-.verygood::-webkit-progress-bar {
+.verygood::-webkit-progress-bar,
+.verygood::-moz-progress-bar {
   background: rgb(1, 108, 1);
 }
 .progressBar {
   width: 40%;
   height: 3rem;
+  flex: 0.5;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -210,6 +221,9 @@ form {
   padding: 1rem 0;
   font-size: 1.2rem;
 }
+.security p {
+  flex: 0.3;
+}
 .smiley {
   width: 2rem;
   margin-left: 0.5rem;
@@ -227,6 +241,7 @@ footer {
   margin-top: 2rem;
   border: 2px solid #15faec;
   border-radius: 0 0 2.5rem 0;
+  background-color: rgb(251, 244, 231);
 }
 footer h2 {
   flex: 0.3;
@@ -282,6 +297,7 @@ footer div {
   .progressBar {
     width: 70%;
     height: 3rem;
+    flex: 0.5;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -390,6 +406,9 @@ footer div {
     width: 5rem;
     position: absolute;
     bottom: -3rem;
+  }
+  .security {
+    flex-direction: column;
   }
 }
 @media (max-width: 505px) {
