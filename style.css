@@ -1,48 +1,22 @@
 /* progress bar */
-progress {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+.verylow {
+  background-color: red;
 }
 
-progress::-webkit-progress-value,
-progress::-moz-progress-value {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: rgb(1, 108, 1);
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.34) inset;
+.low {
+  background-color: orange;
 }
 
-progress::-webkit-progress-bar,
-progress::-moz-progress-bar {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: rgb(226, 226, 226);
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.34) inset;
+.middle {
+  background-color: yellow;
 }
-.verylow::-webkit-progress-value,
-.verylow::-moz-progress-bar {
-  background: red;
+
+.good {
+  background-color: rgb(105, 199, 105);
 }
-.low::-webkit-progress-value,
-.low::-moz-progress-bar {
-  background: orange;
-}
-.middle::-webkit-progress-value,
-.middle::-moz-progress-bar {
-  background: yellow;
-}
-.good::-webkit-progress-value,
-.good::-moz-progress-bar {
-  background: rgb(105, 199, 105);
-}
-.verygood::-webkit-progress-bar,
-.verygood::-moz-progress-bar {
-  background: rgb(1, 108, 1);
+
+.verygood {
+  background-color: rgb(1, 108, 1);
 }
 .progressBar {
   width: 40%;
@@ -52,6 +26,16 @@ progress::-moz-progress-bar {
   justify-content: space-between;
   align-items: center;
   margin: auto;
+}
+#barr {
+  width: 100%;
+  height: 1rem;
+  /* background-color: yellow; */
+  border: solid 0.5px black;
+}
+#securityy {
+  width: 0;
+  height: 100%;
 }
 
 /* général */
@@ -214,14 +198,17 @@ form {
   margin-bottom: 1rem;
   color: #01736b;
 }
-
-.security {
+.security-off {
+  display: none;
+}
+.security-on {
   display: flex;
   justify-content: space-between;
   padding: 1rem 0;
   font-size: 1.2rem;
 }
-.security p {
+
+.security-on p {
   flex: 0.3;
 }
 .smiley {
@@ -290,7 +277,7 @@ footer div {
   #copyPassword {
     position: initial;
   }
-  .security {
+  .security-on {
     flex-direction: column;
     margin-top: -5rem;
   }
@@ -345,7 +332,7 @@ footer div {
   #refresh {
     width: 3.5rem;
   }
-  .security {
+  .security-on {
     flex-direction: row;
     margin-top: 0rem;
     padding: 1rem 2rem;
@@ -407,7 +394,7 @@ footer div {
     position: absolute;
     bottom: -3rem;
   }
-  .security {
+  .security-on {
     flex-direction: column;
   }
 }

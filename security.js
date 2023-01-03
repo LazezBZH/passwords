@@ -1,4 +1,5 @@
-const securityLevel = document.getElementById("security");
+const securityBar = document.getElementById("securityy");
+const securityZone = document.getElementById("security");
 
 passwordLength.addEventListener("change", setLengthRate);
 clearErrorOnChange.addEventListener("click", setCharCategoryRate);
@@ -8,6 +9,15 @@ generatePassword.addEventListener("click", colorProgress);
 let lengthRate = "";
 let charCategoryRate = "";
 let security = "";
+
+generatePassword.addEventListener("click", setSecurity);
+refresh.addEventListener("click", removeSecurity);
+function setSecurity() {
+  securityZone.classList.replace("security-off", "security-on");
+}
+function removeSecurity() {
+  securityZone.classList.replace("security-on", "security-off");
+}
 
 function setLengthRate(e) {
   if (!passwordLength.value || passwordLength.value == 0) {
@@ -60,10 +70,10 @@ function setCharCategoryRate(e) {
 
 function securityRate(e) {
   if (!lengthRate || !charCategoryRate) {
-    securityLevel.value = 0;
+    securityBar.style.width = 0;
   } else {
     security = lengthRate + charCategoryRate;
-    securityLevel.value = security;
+    securityBar.style.width = security + "%";
     return security;
   }
 }
@@ -76,55 +86,54 @@ function colorProgress(e) {
     document.getElementById("good").style.display = "none";
     document.getElementById("verygood").style.display = "none";
   } else if (security > 0 && security <= 20) {
-    securityLevel.classList.add("verylow");
-    securityLevel.classList.remove("low");
-    securityLevel.classList.remove("middle");
-    securityLevel.classList.remove("good");
-    securityLevel.classList.remove("verygood");
+    securityBar.classList.add("verylow");
+    securityBar.classList.remove("low");
+    securityBar.classList.remove("middle");
+    securityBar.classList.remove("good");
+    securityBar.classList.remove("verygood");
     document.getElementById("verylow").style.display = "block";
     document.getElementById("low").style.display = "none";
     document.getElementById("middle").style.display = "none";
     document.getElementById("good").style.display = "none";
     document.getElementById("verygood").style.display = "none";
   } else if (security > 20 && security <= 50) {
-    securityLevel.classList.remove("verylow");
-    securityLevel.classList.add("low");
-    securityLevel.classList.remove("middle");
-    securityLevel.classList.remove("good");
-    securityLevel.classList.remove("verygood");
+    securityBar.classList.add("low");
+    securityBar.classList.remove("middle");
+    securityBar.classList.remove("good");
+    securityBar.classList.remove("verygood");
     document.getElementById("verylow").style.display = "none";
     document.getElementById("low").style.display = "block";
     document.getElementById("middle").style.display = "none";
     document.getElementById("good").style.display = "none";
     document.getElementById("verygood").style.display = "none";
   } else if (security > 50 && security < 80) {
-    securityLevel.classList.remove("verylow");
-    securityLevel.classList.remove("low");
-    securityLevel.classList.add("middle");
-    securityLevel.classList.remove("good");
-    securityLevel.classList.remove("verygood");
+    securityBar.classList.remove("verylow");
+    securityBar.classList.remove("low");
+    securityBar.classList.add("middle");
+    securityBar.classList.remove("good");
+    securityBar.classList.remove("verygood");
     document.getElementById("verylow").style.display = "none";
     document.getElementById("low").style.display = "none";
     document.getElementById("middle").style.display = "block";
     document.getElementById("good").style.display = "none";
     document.getElementById("verygood").style.display = "none";
   } else if (security >= 80 && security <= 90) {
-    securityLevel.classList.remove("verylow");
-    securityLevel.classList.remove("low");
-    securityLevel.classList.remove("middle");
-    securityLevel.classList.add("good");
-    securityLevel.classList.remove("verygood");
+    securityBar.classList.remove("verylow");
+    securityBar.classList.remove("low");
+    securityBar.classList.remove("middle");
+    securityBar.classList.add("good");
+    securityBar.classList.remove("verygood");
     document.getElementById("verylow").style.display = "none";
     document.getElementById("low").style.display = "none";
     document.getElementById("middle").style.display = "none";
     document.getElementById("good").style.display = "block";
     document.getElementById("verygood").style.display = "none";
   } else {
-    securityLevel.classList.remove("verylow");
-    securityLevel.classList.remove("low");
-    securityLevel.classList.remove("middle");
-    securityLevel.classList.remove("good");
-    securityLevel.classList.add("verygood");
+    securityBar.classList.remove("verylow");
+    securityBar.classList.remove("low");
+    securityBar.classList.remove("middle");
+    securityBar.classList.remove("good");
+    securityBar.classList.add("verygood");
     document.getElementById("verylow").style.display = "none";
     document.getElementById("low").style.display = "none";
     document.getElementById("middle").style.display = "none";
