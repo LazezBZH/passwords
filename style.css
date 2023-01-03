@@ -29,7 +29,7 @@ progress::-moz-progress-bar {
   background: red;
 }
 .low::-webkit-progress-value,
-.low::-moz-progress-value {
+.low::-moz-progress-bar {
   background: orange;
 }
 .middle::-webkit-progress-value,
